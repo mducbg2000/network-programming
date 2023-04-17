@@ -33,9 +33,9 @@ int main(int argc, char const *argv[])
     char buf[2048];
     int len = recv(client, buf, sizeof(buf), 0);
     buf[len] = 0;
-    printf("Data received: %s\n", buf);
+    std::cout << "Data received: " << buf << '\n';
 
-    std::cout << "Print message:";
+    std::cout << "Print message:\n";
     std::string message;
     std::cin >> message;
     auto msg = message.c_str();
