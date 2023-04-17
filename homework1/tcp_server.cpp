@@ -13,17 +13,16 @@ int main(int argc, char const *argv[])
 {
 
     // load greeting from file
-    std::ifstream temp(argv[1]);
+    std::ifstream temp(argv[2]);
     std::string greeting;
     getline(temp, greeting);
     temp.close();
     auto msg = greeting.c_str();
-
     // open file to write
-    std::ofstream receiver(argv[2]);
+    std::ofstream receiver(argv[3]);
 
     // Init socket
-    auto port = atoi(argv[0]);
+    auto port = atoi(argv[1]);
 
     int server = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (server < 0)
